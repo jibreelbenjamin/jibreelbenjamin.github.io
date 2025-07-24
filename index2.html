@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio - Jibreel Benjamin </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      padding: 40px;
+      color: #000;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px;
+      border-top: 6px solid black;
+      border-bottom: 6px solid black;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+      gap: 30px;
+    }
+
+    .header img {
+      width: 200px;
+      height: auto;
+      object-fit: cover;
+      border: 4px solid black;
+    }
+
+    .header h1 {
+      font-size: 78px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .section p,
+    .section li {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .contact-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-icons div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="img/pfp-formal.jpg" alt="Foto Profil">
+      <h1>JIBREEL<br>BENJAMIN</h1>
+    </div>
+
+    <div class="content">
+      <div>
+        <div class="section">
+          <h2>• TENTANG SAYA</h2>
+          <p>Saya pernah menjadi seorang PR di UKM koperasi kampus. Saya juga berpengalaman dalam berbicara di depan publik. Keahlian lain saya suka akan menganalisis masalah dan merumuskan solusi bersama dengan tim saya.</p>
+        </div>
+
+        <div class="section">
+          <h2>• PENGALAMAN</h2>
+          <p>Juli 2018 - Agustus 2019<br>PR UKM Koperasi Kampus</p>
+          <p>April 2020 - Agustus 2020<br>Magang di Studio Shodwe</p>
+        </div>
+
+        <div class="section">
+          <h2>• KONTAK</h2>
+          <div class="contact-icons">
+            <div>📞 123-456-7890</div>
+            <div>📧 hello@reallygreatsite.com</div>
+            <div>🌐 www.reallygreatsite.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section">
+          <h2>• PENDIDIKAN</h2>
+          <p>2017 - 2021<br>Universitas Larana<br>S1 Manajemen</p>
+          <p>2014 - 2017<br>SMA Borcelle<br>Jurusan IPS</p>
+        </div>
+
+        <div class="section">
+          <h2>• KESUKAAN</h2>
+          <ul>
+            <li>Mendengarkan Musik</li>
+            <li>Menonton Konser</li>
+            <li>Menonton Film</li>
+            <li>Fotografi</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>• KEAHLIAN</h2>
+          <ul>
+            <li>Bercerita</li>
+            <li>Berdiskusi</li>
+            <li>Pembicara Publik</li>
+            <li>Pemecah Masalah</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="form" style="margin-top: 60px;">
+      <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px;">Hubungi Saya</h2>
+
+      <form name="contact-form">
+        <div style="margin-bottom: 20px;">
+          <label for="name" style="display: block; font-weight: 600; margin-bottom: 6px;">Nama</label>
+          <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #000; border-radius: 4px;">
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label for="email" style="display: block; font-weight: 600; margin-bottom: 6px;">Email</label>
+          <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #000; border-radius: 4px;">
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label for="message" style="display: block; font-weight: 600; margin-bottom: 6px;">Pesan</label>
+          <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; border: 1px solid #000; border-radius: 4px;"></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" style="padding: 12px 24px; background-color: black; color: white; font-weight: bold; border: none; border-radius: 4px; cursor: pointer;">
+          Kirim Pesan
+        </button>
+
+        <p id="notif" style="margin-top: 15px; display: none; color: green; font-weight: 600;">✅ Pesan berhasil dikirim!</p>
+      </form>
+    </div>
+
+
+  </div>
+</body>
+</html>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzw-QQXM-lajjTXIJcNfbjMM1oSBkoOmevjBicgtuKvwDw1jQNoQAjkZOTBFoI0UaYrlQ/exec';
+  const form = document.forms['contact-form'];
+  const submitBtn = document.getElementById('submitBtn');
+  const notif = document.getElementById('notif');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const originalText = submitBtn.innerText;
+    submitBtn.innerText = 'Loading...';
+    submitBtn.disabled = true;
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then((response) => {
+        form.reset();
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+        notif.style.display = 'block';
+        setTimeout(() => {
+          notif.style.display = 'none';
+        }, 4000); 
+      })
+      .catch((error) => {
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+        console.error('Error!', error.message);
+      });
+  });
+</script>
