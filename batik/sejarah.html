@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="icon" href="images/favicon_light.png">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+      * {
+        font-family: "Inter", sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <title>Sejarah - Batik indonesia</title>
+</head>
+<body class="bg-white dark:bg-stone-900">
+
+<div>
+  <!-- Header -->
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <a href="index.html" class="-m-1.5 p-1.5">
+          <span class="sr-only">Batik</span>
+          <img src="images/favicon_light.png" alt="logo" class="h-8 w-auto dark:hidden" />
+          <img src="images/favicon_dark.png" alt="logo" class="h-8 w-auto not-dark:hidden" />
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="index.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Beranda</a>
+        <a href="explore.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Tentang batik</a>
+        <a href="sejarah.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Sejarah</a>
+        <a href="motif.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Motif</a>
+        <a href="galeri.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Galeri</a>
+        <a target="_blank" href="https://github.com/jibreelbenjamin" class="flex text-sm/6 font-semibold text-gray-900 dark:text-white">
+          <svg class="text-xs" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          Founder
+        </a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="kontak.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Informasi kontak <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-stone-900/10 dark:bg-stone-900 dark:sm:ring-stone-100/10">
+            <div class="flex items-center justify-between">
+              <a href="index.html" class="-m-1.5 p-1.5">
+                <span class="sr-only">Batik</span>
+                <img src="images/favicon_light.png" alt="logo" class="h-8 w-auto dark:hidden" />
+                <img src="images/favicon_dark.png" alt="logo" class="h-8 w-auto not-dark:hidden" />
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
+                <div class="space-y-2 py-6">
+                  <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Beranda</a>
+                  <a href="explore.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Tentang batik</a>
+                  <a href="sejarah.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Sejarah</a>
+                  <a href="motif.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Motif</a>
+                  <a href="galeri.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Galeri</a>
+                </div>
+                <div class="py-6">
+                  <a href="kontak.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Informasi kontak</a>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+
+  <main class="isolate">
+    <div class="bg-white px-6 py-32 lg:px-8 dark:bg-transparent">
+      <div class="mx-auto max-w-3xl text-base/7 text-gray-700 dark:text-gray-300">
+        <p class="text-base/7 font-semibold text-amber-500">Mengenal lebih jauh</p>
+        <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">Sejarah Batik di Indonesia</h1>
+        <p class="mt-6 text-xl/8">Batik bukan sekadar kain bermotif indah, tetapi sebuah warisan budaya yang menyimpan jejak sejarah panjang bangsa Indonesia. Dari masa kerajaan, ketika batik hanya dikenakan keluarga bangsawan, hingga kini menjadi identitas nasional yang mendunia, batik selalu hadir sebagai simbol kebanggaan, filosofi hidup, dan karya seni tinggi. Setiap goresan canting dan perpaduan warna pada kain bukan hanya hasil keterampilan, melainkan juga cerminan doa, harapan, dan nilai-nilai yang diwariskan dari generasi ke generasi.</p>
+        <div class="mt-10 max-w-2xl text-gray-600 dark:text-gray-400">
+          <p>Sejarah batik di Indonesia bukanlah perjalanan singkat. Ia berkembang melalui berbagai fase: dari tradisi keraton Jawa, interaksi dengan budaya asing, masa penjajahan kolonial, hingga akhirnya diakui oleh UNESCO sebagai Warisan Budaya Takbenda Dunia pada tahun 2009. Perjalanan panjang ini memperlihatkan bagaimana batik mampu beradaptasi tanpa kehilangan jati dirinya, menjadikannya bukan hanya produk budaya, melainkan juga saksi bisu perjalanan sejarah bangsa.</p>
+          
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">Abad 5 M – Batik Tertua di Sulawesi</h2>
+          <figure class="mt-4">
+          <img src="images/sejarah/1.jpg" alt="" class="aspect-video rounded-xl bg-gray-50 object-cover dark:bg-gray-800" />
+          <figcaption class="mt-4 flex gap-x-2 text-sm/6 text-gray-500 dark:text-gray-400">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mt-0.5 size-5 flex-none text-gray-300 dark:text-gray-600">
+              <path d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+            Borobudur
+          </figcaption>
+          </figure>
+          <p class="mt-6">Batik sudah digunakan sejak lama dalam kehidupan masyarakat Indonesia; misalnya bayi dibawa dalam kain batik bertuah dan orang meninggal dibalut batik. Fakta arkeologis menunjukkan kain batik tertua ditemukan di Toraja (Sulawesi) berumur kira-kira abad ke-5 M. Ini menandai teknik celup-nyoret (wax-resist) telah dikenal di Nusantara sejak zaman kuno.</p>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">Abad 6-7 M – Asal-usul Batik di Jawa</h2>
+          <p class="mt-6">Banyak sejarawan berpendapat teknik batik tiba di Jawa sekitar abad ke-6 - 7 M dari India atau Sri Lanka. Sebaliknya, sebagian ahli meyakini tradisi membatik sudah berkembang secara lokal di daerah-daerah seperti Toraja, Flores, dan Halmahera tanpa pengaruh luar. Perdebatan ini menunjukkan batik telah lama ada di Indonesia, entah lewat kontak dagang Asia maupun warisan budaya asli.</p>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">Abad 13 M – Batik Era Hindu-Buddha</h2>
+          <p class="mt-6">Pada abad ke-13, motif-motif mirip batik telah tampak di seni rupa Jawa. Relief candi Prajnaparamita (Jawa Timur) abad ke-13 menampilkan pola sulur dan bunga rumit yang menyerupai batik tulis (pembuatan tangan) tradisional. Bukti lain: pada paruh akhir abad ke-13, kain batik Jawa sudah diekspor ke Kepulauan Karimata, Siam, bahkan hingga Mosul (Timur Tengah). Ini menunjukkan batik Jawa telah maju teknik dan kualitasnya pada masa Kerajaan Hindu-Buddha.</p>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">Abad 15-18 M – Batik Keraton dan Pengaruh Islam</h2>
+          <p class="mt-6">Setelah kejatuhan Majapahit, kerajaan-kerajaan Islam seperti Mataram di Jawa Tengah dan Keraton Yogyakarta mengembangkan batik tradisional. Motif Hindu-Buddha lama diadaptasi ke konteks Islam, dan muncul motif-motif baru. Batik pada masa ini menjadi bagian ritual keraton: sebagian motif hanya dipakai oleh keluarga raja atau upacara tertentu. Warna dan pola pun menunjukkan status sosial pemakainya batik kraton (pedalaman) biasanya berwarna cokelat/sogan tua dengan simbol sakral, berbeda dengan batik pesisir yang cerah berpengaruh budaya asing.</p>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">Abad 18-19 M – Era Kolonial dan Akulturasi Budaya</h2>
+          <figure class="mt-4">
+          <img src="images/sejarah/2.jpg" alt="" class="aspect-square rounded-xl bg-gray-50 object-cover dark:bg-gray-800" />
+          <figcaption class="mt-4 flex gap-x-2 text-sm/6 text-gray-500 dark:text-gray-400">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mt-0.5 size-5 flex-none text-gray-300 dark:text-gray-600">
+              <path d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+            Sultan Pakubuwana X, Kesultanan Surakarta
+          </figcaption>
+          </figure>
+          <p class="mt-6">Pada masa VOC dan Hindia Belanda, batik menjadi komoditas ekspor penting. Lewat pelabuhan dan perintis seperti pengusaha Tionghoa, motif batik pesisir menyerap banyak pengaruh asing. Misalnya, corak bunga beraneka rupa dari Eropa, phoenix Tionghoa, sakura Jepang, hingga kaligrafi Arab mulai muncul pada kain batik. Aspek ini tercatat dalam warisan UNESCO: Keragaman pola batik mencerminkan pengaruh mulai dari kaligrafi Arab, karangan bunga Eropa, phoenix Cina, bunga sakura Jepang, hingga merak Persia/India.</p>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">1817-1900 – Pengakuan Batik oleh Dunia Barat</h2>
+          <p class="mt-6">Batik Jawa menarik perhatian peneliti Eropa lewat karya T.S. Raffles. Dalam bukunya The History of Java (1817), Raffles menulis deskripsi batik pertama kali, memicu minat kolektor dan etnolog Barat. Pada 1873, kolektor Belanda Van Rijckevorsel menyumbangkan batik dari perjalanannya ke Museum Etnografi Rotterdam. Puncaknya, pada Pameran Dunia Paris 1900 batik Indonesia memukau publik dan seniman Eropa. Melalui pameran dan koleksi museum, dunia Barat mulai mengenal batik sebagai seni tekstil khas Nusantara.</p>
+          <figure class="mt-10 border-l border-amber-500 pl-9 dark:border-amber-400">
+            <blockquote class="font-semibold text-gray-900 dark:text-white">
+              <p>"Batik technique became more widely known (particularly by Europeans) when Javanese batik was described for the first time in Thomas Stamford Raffles's 1817 The History of Java, which also marked the beginning of collecting and scholarly interest in batik traditions. In 1873 the Dutch merchant Van Rijckevorsel gave the pieces he collected during a trip to Indonesia to the ethnographic museum in Rotterdam. Examples were displayed at the Exposition Universelle at Paris in 1900. Today the Tropenmuseum houses the biggest collection of Indonesian batik in the Netherlands."</p>
+            </blockquote>
+            <figcaption class="mt-6 flex gap-x-4">
+              <div class="text-sm/6"><strong class="font-semibold text-gray-900 dark:text-white">Wikipedia</strong> – Ancient to early modern periods</div>
+            </figcaption>
+          </figure>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">Awal abad ke-20 – Revolusi Industri Batik</h2>
+          <p class="mt-6">Memasuki abad ke-20, teknik produksi batik modern berkembang pesat. Cap tembaga (stempel) mulai digunakan untuk mempercepat pembuatan motif, memunculkan batik cap dan later printing batik. Penemuannya memungkinkan produksi massal batik yang lebih murah daripada batik tulis. Selain itu, penduduk nusantara yang merantau membawa batik ke Malaysia, dan batik Jawa disebarkan oleh pedagang ke Afrika hingga tercipta African wax prints berakar dari batik Jawa. Produksi batik pun belajar dari proses industrialisasi: pewarna sintetis muncul, motif baru lahir dari akulturasi, dan batik menjadi pakaian sehari-hari banyak kalangan.</p>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">1942-1945 – Pendudukan Jepang</h2>
+          <p class="mt-6">Masa pendudukan Jepang di Indonesia menimbulkan kemunduran industri batik karena kekurangan bahan baku. Banyak bengkel batik berhenti berproduksi. Namun, pemerintah pendudukan membentuk kelompok Jawa Hokokai yang membiayai batik kontemporer dengan motif bunga sakura dan krisan khas Jepang. Jadi, di tengah keterbatasan perang, lahirlah gaya batik Hokokai yang sekarang menjadi bagian sejarah batik Jawa.</p>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">1950 an – Era Kemerdekaan dan Batik Nasional</h2>
+          <p class="mt-6">Setelah Indonesia merdeka (1945), batik tetap dijunjung sebagai identitas nasional. Presiden Soekarno bahkan memerintahkan pengembangan motif batik baru dengan makna persatuan Indonesia pada dekade 1950-an. Contohnya, motif Batik Terang Bulan yang diciptakan oleh Ibu Soedibyo mengikuti visi Soekarno untuk batik lintas budaya. Ini menandai batik tidak hanya dipakai kalangan istana, tapi juga diangkat sebagai simbol nasional. Sekalipun pabrik tradisional sempat terpuruk pasca-perang, banyak pengrajin tetap melestarikan pembatikan secara turun-temurun.</p>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">1970 an – Batik Mendunia</h2>
+          <p class="mt-6">Tahun 1970-an, batik Indonesia semakin terkenal di pentas dunia. Presiden Soeharto memperkenalkan batik pada forum Perserikatan Bangsa-Bangsa (PBB), mengenakan batik resmi hingga membuat dunia internasional mengenal warisan batik. Di sisi kreatif, desainer Iwan Tirta mengangkat batik ke panggung mode global pada dekade 1970-an. Karyanya memadukan motif klasik dalam kain sutra dan bahan mewah, memperluas apresiasi batik sebagai haute couture. Dengan dukungan pemerintah, batik juga dipakai sebagai busana diplomasi (misalnya di KTT APEC 1994).</p>
+          <figure class="mt-10 border-l border-amber-500 pl-9 dark:border-amber-400">
+            <blockquote class="font-semibold text-gray-900 dark:text-white">
+              <p>"Iwan Tirta adalah salah satu seniman batik yang membawa batik Indonesia ke panggung Internasional di tahun 1970-an. Karyanya banyak yang terinspirasi dari gurunya, Go Tik Swan. Iwan Tirta terkenal dengan desain motif batik klasik yang ukurannya diperbesar. Sejak 1970-an Iwan banyak bereksperimen dengan berbagai media seperti sutera, crepe de chine, dan organza untuk menciptakan batik yang mewah, dengan tetap mempertahankan unsur-unsur tradisional."</p>
+            </blockquote>
+            <figcaption class="mt-6 flex gap-x-4">
+              <div class="text-sm/6"><strong class="font-semibold text-gray-900 dark:text-white">Pusakaindonesia</strong> – Evolusi batik di era setelah kemerdekaan</div>
+            </figcaption>
+          </figure>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">Warisan Dunia UNESCO & Hari Batik Nasional</h2>
+          <p class="mt-6">Puncak pengakuan internasional terjadi tahun 2009. Indonesia mendaftarkan batik sebagai Warisan Budaya Takbenda ke UNESCO pada 4 September 2008, dan pada 9 Januari 2009 pengajuan itu diterima. Pada sidang UNESCO ke-4 di Abu Dhabi, 2 Oktober 2009, batik diresmikan sebagai Masterpiece of the Oral and Intangible Heritage of Humanity. Pengakuan ini kemudian memicu Pemerintah menetapkan 2 Oktober setiap tahun sebagai Hari Batik Nasional melalui Keppres No.33/2009. Batik kini diakui dunia bukan hanya sebagai seni tekstil, tetapi sebagai identitas budaya Indonesia.</p>
+          <figure class="mt-10 border-l border-amber-500 pl-9 dark:border-amber-400">
+            <blockquote class="font-semibold text-gray-900 dark:text-white">
+              <p>"Inscribed in 2009 (4.COM) on the Representative List of the Intangible Cultural Heritage of Humanity - The wide diversity of patterns reflects a variety of influences, ranging from Arabic calligraphy, European bouquets and Chinese phoenixes to Japanese cherry blossoms and Indian or Persian peacocks. Often handed down within families for generations, the craft of batik is intertwined with the cultural identity of the Indonesian people and, through the symbolic meanings of its colours and designs, expresses their creativity and spirituality."</p>
+            </blockquote>
+            <figcaption class="mt-6 flex gap-x-4">
+              <div class="text-sm/6"><strong class="font-semibold text-gray-900 dark:text-white">UNESCO</strong> – Intangible Cultural Heritage</div>
+            </figcaption>
+          </figure>
+
+          <h2 class="mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">Revitalisasi dan Industri Kreatif</h2>
+          <figure class="mt-4">
+          <img src="images/sejarah/4.jpg" alt="" class="aspect-video rounded-xl bg-gray-50 object-cover dark:bg-gray-800" />
+          <figcaption class="mt-4 flex gap-x-2 text-sm/6 text-gray-500 dark:text-gray-400">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mt-0.5 size-5 flex-none text-gray-300 dark:text-gray-600">
+              <path d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+            Festival fashion JF3 2024 menggunakan teknik batik cap
+          </figcaption>
+          </figure>
+          <p class="mt-6">Pascapengakuan UNESCO, batik mengalami kebangkitan luas. Pemerintah dan komunitas batik mengadakan festival, sekolah batik, dan integrasi kurikulum untuk mengenalkan batik kepada generasi muda. Di sisi ekonomi, batik menjadi sumber pendapatan besar: pada tahun 2015 tercatat terdapat 47.775 UMKM batik dan 199.744 pekerja yang menggantungkan hidupnya pada industri batik. Batik juga menembus dunia mode internasional; karya perancang Indonesia sering ditampilkan di peragaan busana di New York, Milan, dan kota global lainnya. Dengan demikian, dari akar tradisional hingga pengakuan internasional, batik terus berkembang sebagai warisan budaya yang hidup.</p>
+
+          <p class="mt-10">Batik bukan hanya karya seni yang lahir dari tangan-tangan terampil, melainkan juga warisan budaya yang mengikat perjalanan sejarah bangsa Indonesia. Dari masa kerajaan hingga era modern, batik selalu berhasil menjaga relevansi dan maknanya. Setiap motif menyimpan kisah, setiap warna melambangkan nilai, dan setiap helai kain menjadi saksi perubahan zaman. Kini, di tengah arus globalisasi, batik tidak sekadar menjadi identitas budaya, tetapi juga sumber inspirasi yang memperkaya dunia mode, kerajinan, hingga industri kreatif. Pengakuan UNESCO pada tahun 2009 hanyalah salah satu tonggak yang menegaskan betapa berharganya batik sebagai pusaka dunia.</p>
+
+          <p class="mt-10">Melestarikan batik berarti menjaga jati diri, menghargai leluhur, sekaligus meneruskan warisan untuk generasi mendatang. Karena pada akhirnya, batik bukan hanya milik masa lalu, melainkan juga warisan hidup yang terus bernapas di masa kini dan masa depan.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <div class="space-y-8">
+        <img src="images/favicon_light.png" alt="logo" class="h-9 w-auto dark:hidden" />
+        <img src="images/favicon_dark.png" alt="logo" class="h-9 w-auto not-dark:hidden" />
+        <p class="text-sm/6 text-balance text-gray-600 dark:text-gray-400">Membuat dunia lebih baik dengan merangkai hierarki yang elegan, sebagaimana sehelai batik ditenun dengan penuh makna.</p>
+        <div class="flex gap-x-6">
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">Facebook</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">Instagram</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">X</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">GitHub</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">YouTube</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Sitasi</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="https://www.unesco.org/en" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">UNESCO</a>
+              </li>
+              <li>
+                <a href="https://www.wikipedia.org/" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Wikipedia</a>
+              </li>
+              <li>
+                <a href="https://pusakaindonesia.id/" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Pusakaindonesia</a>
+              </li>
+              <li>
+                <a href="https://www.aa.com.tr/en" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Anadolu Anjasi</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-10 md:mt-0">
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Quick links</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="index.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Beranda</a>
+              </li>
+              <li>
+                <a href="explore.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Tentang batik</a>
+              </li>
+              <li>
+                <a href="sejarah.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Sejarah</a>
+              </li>
+              <li>
+                <a href="motif.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Motif</a>
+              </li>
+              <li>
+                <a href="galeri.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Galeri</a>
+              </li>
+              <li>
+                <a href="kontak.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Informasi kontak</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Motif Batik</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="motif.html#:~:text=Motif%20Kawung" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Kawung</a>
+              </li>
+              <li>
+                <a href="motif.html#:~:text=Motif%20Sidoasih" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Sidoasih</a>
+              </li>
+              <li>
+                <a href="motif.html#:~:text=Motif%20Cuwiri" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Cuwiri</a>
+              </li>
+              <li>
+                <a href="motif.html#:~:text=Motif%20Truntum" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Truntum</a>
+              </li>
+              <li>
+                <a href="motif.html#:~:text=Motif%20Gentongan" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Gentongan</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-10 md:mt-0">
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Galeri produk</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="galeri.html#:~:text=Batik%20mega%20mendung" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Batik mega mendung</a>
+              </li>
+              <li>
+                <a href="galeri.html#:~:text=Kain%20hias%20atau%20taplak%20meja" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Kain hias atau taplak meja</a>
+              </li>
+              <li>
+                <a href="galeri.html#:~:text=Syal%20scarf%20selendang%20hitam%20putih" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Syal scarf selendang hitam putih</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 dark:border-white/10">
+      <p class="text-sm/6 text-gray-600 dark:text-gray-400">&copy; 2025 Jibreel Benjamin. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+<button onclick="topFunction()" class="hidden fixed bottom-7 right-9 z-[99] border-none outline-none bg-amber-500 text-white cursor-pointer p-3 rounded-full text-lg hover:bg-amber-600" id="myBtn" title="Go to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+</body>
+<script>
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</html>

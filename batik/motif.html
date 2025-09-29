@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="icon" href="images/favicon_light.png">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+      * {
+        font-family: "Inter", sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <title>Motif - Batik indonesia</title>
+</head>
+<body class="bg-white dark:bg-stone-900">
+
+<div>
+  <!-- Header -->
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <a href="index.html" class="-m-1.5 p-1.5">
+          <span class="sr-only">Batik</span>
+          <img src="images/favicon_light.png" alt="logo" class="h-8 w-auto dark:hidden" />
+          <img src="images/favicon_dark.png" alt="logo" class="h-8 w-auto not-dark:hidden" />
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="index.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Beranda</a>
+        <a href="explore.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Tentang batik</a>
+        <a href="sejarah.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Sejarah</a>
+        <a href="motif.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Motif</a>
+        <a href="galeri.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Galeri</a>
+        <a target="_blank" href="https://github.com/jibreelbenjamin" class="flex text-sm/6 font-semibold text-gray-900 dark:text-white">
+          <svg class="text-xs" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          Founder
+        </a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="kontak.html" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Informasi kontak <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-stone-900/10 dark:bg-stone-900 dark:sm:ring-stone-100/10">
+            <div class="flex items-center justify-between">
+              <a href="index.html" class="-m-1.5 p-1.5">
+                <span class="sr-only">Batik</span>
+                <img src="images/favicon_light.png" alt="logo" class="h-8 w-auto dark:hidden" />
+                <img src="images/favicon_dark.png" alt="logo" class="h-8 w-auto not-dark:hidden" />
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
+                <div class="space-y-2 py-6">
+                  <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Beranda</a>
+                  <a href="explore.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Tentang batik</a>
+                  <a href="sejarah.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Sejarah</a>
+                  <a href="motif.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Motif</a>
+                  <a href="galeri.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Galeri</a>
+                </div>
+                <div class="py-6">
+                  <a href="kontak.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Informasi kontak</a>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+
+  <main class="isolate">
+    <div class="bg-white py-24 sm:py-32 dark:bg-transparent">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:max-w-4xl">
+          <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">Ragam Motif Batik</h2>
+          <p class="mt-2 text-lg/8 text-gray-600 dark:text-gray-400">Cerminan Budaya dalam Kain. Jejak Warna dan Simbol Nusantara.</p>
+          <div class="mt-16 space-y-20 lg:mt-20">
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/parang.jpg" alt="parang" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Solo & Yogyakarta</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Parang
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif parang adalah salah satu motif tertua di batik Indonesia. Bentuknya diagonal, terkadang miring ~54°, menyerupai huruf “S” yang saling menyambung—terinspirasi ombak di laut selatan yang menghantam karang. Menggambarkan keteguhan, semangat pantang menyerah, dan perjuangan yang tiada putus, konsistensi dalam kehidupan.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/kawung.jpg" alt="kawung" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Yogyakarta & Jawa Tengah</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Kawung
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif berupa lingkaran (irisan kawung/kolang-kaling) yang disusun geometris. Melambangkan kehidupan manusia yang harus bersikap seimbang, menjaga hati nurani, menahan hawa nafsu. Ada makna kesucian, kemurnian, umur panjang. Dulu motif ini hanya boleh digunakan oleh kalangan bangsawan/keraton.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/megamendung.jpg" alt="megamendung" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Cirebon, Jawa Barat</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Mega Mendung
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif awan (mega = awan / langit, mendung = gelap) dengan beberapa gradasi warna yang menyiratkan lapisan langit. Kesabaran, pengharapan, ketenangan dalam menghadapi perubahan alam dan kehidupan; mampu mengendalikan amarah, tetap adem dalam situasi mendung/hambatan.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/sekarjagad.jpg" alt="sekar jagad" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Solo & Yogyakarta</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Sekar Jagad
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">“Sekar” (bunga) + “Jagad” (dunia) — melambangkan keindahan, keberagaman dunia, seperti bunga-bunga yang terdiri dari banyak jenis. Motif ini sering memuat banyak variasi ornamen flora, pulau, peta kecil. Filosofi: kecantikan (budi pekerti), keragaman budaya, harmoni & keindahan alam dan manusia.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/sidomukti.jpg" alt="sidomukti" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Solo / Yogyakarta</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Sidomukti
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Kombinasi ornamen bunga, kadang kupu-kupu, pewarna alam (soga), warna tradisional. Arti: kemuliaan, kesejahteraan lahir dan batin; harapan agar pemakai mencapai hidup yang baik, sejahtera, dan bermartabat.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/sidoluhur.jpg" alt="sidoluhur" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Solo (daerah keraton)</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Sidoluhur
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">“Sido” = jadi / menjadi; “luhur” = mulia / terhormat. Harapan supaya pemakainya bisa menjadi orang yang berharga, dihormati, menjaga tingkah laku luhur, mitra kehidupan yang bermartabat.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/gurdho.jpg" alt="gurdho" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Jawa tradisional</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Gurdho Pisang Bali & Gurdho Latar Kembang
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Gurdho diartikan “dunia atas” atau dunia yang mengandung kekuasaan ilahi, religiusitas. Gurdho Pisang Bali mengandung harapan, doa, keselamatan dan keberanian menghadapi tantangan untuk mencapai karya yang bermakna. Gurdho Latar Kembang: kedudukan baik, mahkota & bunga, harapan agar pemakai memperoleh kedudukan pantas & terhormat.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/sidoasih.jpg" alt="sidoasih" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Jawa Tengah (Solo / Yogyakarta)</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Sidoasih
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif khas digunakan pada acara pernikahan; maknanya kasih sayang, kelembutan, persatuan dalam rumah tangga. Harapan agar relasi antar pasangan penuh akan cinta dan rasa saling pengertian.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/tujuhrupa.jpg" alt="tujuh rupa" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Pekalongan (pantura)</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Tujuh Rupa
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif yang menggambarkan tujuh rupa alam (flora/fauna) dan akulturasi budaya lokal dengan pengaruh budaya asing (khususnya China). Menggambarkan keramahan masyarakat pesisir yang terbuka terhadap budaya luar dan mampu adaptif; juga melambangkan keragaman dan kelembutan.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/ceplok.jpg" alt="ceplok" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Yogyakarta</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Ceplok
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Pola geometris berbentuk bundar atau lingkaran yang saling bersinggungan atau bersilang; motif ceplok banyak versi — bentuk bunga atau rondelle. Persatuan, kesatuan, keharmonisan; lingkaran sebagai simbol siklus kehidupan yang terus berulang dan hubungan antar manusia yang tidak mudah terputus.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/barong.jpg" alt="barong" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Cirebon</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Singa Barong
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Gambar makhluk mitologi dari Bali ini memang sudah lumrah di mata kita. Ternyata, barong juga dijadikan gambar batik oleh masyarakat Bali. Batik ini sering diminati oleh turis Bali meskipun eksistensinya yang tidak setua batik lainnya, mengingat sosok barong yang sangat termasyur di kalangan masyarakat luas hingga ke kancah internasional.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/cuwiri.jpg" alt="cuwiri" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Yogyakarta</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Cuwiri
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Umumnya, batik ini digunakan sang ibu hamil pada upacara nujuh bulan sebagai bagian dari tradisi. Arti kata “cuwiri” yang berarti “kecil-kecil” ini memiliki filosofi arti berupa kehidupan manusia dari lahir hingga meninggal. Gambar dalam motif batik ini adalah paduan antara burung garuda dan lengkungan menyerupai “meru” atau gunung.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/lasem.jpg" alt="lasem" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Jawa Tengah</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Lasem
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Gambar pada motif batik ini melambangkan penggabungan budaya antara Indonesia dan Tionghua, seperti adanya burung Hong, naga, atau desain kipas yang kental dengan adat Tionghua. Batik ini juga menjadi buruan para kolektor karena keindahannya yang mewah dan elegan.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/truntum.jpg" alt="truntum" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Solo</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Truntum
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif batik truntum pada dasarnya melambangkan kasih sayang dan cinta yang terus bermekaran dalam hubungan pasangan. Nama truntum sendiri berasal dari Bahasa Jawa “tumaruntum” yang berarti bersemi kembali. Batik ini biasanya digunakan oleh orangtua pengantin pada pernikahan anaknya, dengan harapan agar cinta dan kasih sayang terus terjalin antara kedua mempelai. Kemudian, batik ini juga menyimbolkan agar orang tua menuntun kedua anaknya dalam mengarungi kehidupan yang baru setelah pernikahan.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/ulamsari.jpg" alt="ulamsari mas" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Bali</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Ulamasari Mas
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Masyarakat Bali menuangkan simbol kesejahteraan mereka ke dalam motif batik ulamsari mas. Hal ini ditandai dengan adanya gambar-gambar ikan dan udang yang merupakan sumber mata pencaharian penduduk setempat karena Bali yang kaya akan sumber daya alam lautnya.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/cendrawasih.jpg" alt="cendrawasih" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Papua</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Cendrawasih
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif batik dengan ornamen burung cendrawasih, burung khas Papua yang dikenal indah dan langka. Biasanya digambarkan anggun dengan bulu ekor panjang, dipadukan dengan bunga atau dedaunan. elambangkan keindahan, kemuliaan, keluhuran budi, serta harapan agar pemakainya memperoleh kehidupan yang penuh kebahagiaan, kehormatan, dan kebaikan.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/gentongan.jpg" alt="gentongan" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Tanjungbumi, Bangkalan</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Gentongan
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif batik yang khas dari daerah ini adalah sentuhan flora dan fauna, termasuk dalam batik gentongan yang juga berasal dari Madura. Namun, gambar batik gentongan lebih condong ke motif flora dan abstrak. Warna yang dimiliki batik gentongan serupa dengan batik khas Madura lainnya, yaitu bernuansa terang seperti merah, kuning, hijau, dan biru, dengan masing-masing warna mewakilkan arti filosofis yang indah.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/tambal.jpg" alt="tambal" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Yogyakarta</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Tambal
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Bak kain perca yang disambung untuk menambal lubang pada pakaian, batik tambal juga menggunakan teknik yang serupa namun tak sama. Batik ini menggabungkan potongan-potongan kecil batik dengan motif yang berbeda menjadi satu motif batik yang variatif. Indah bukan?</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/buketan.jpg" alt="buktean" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Pekalongan</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Buketan
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif batik yang menampilkan susunan tumbuh-tumbuhan, bunga, atau karangan bunga yang disusun memanjang selebar kain, terinspirasi dari kata Prancis "bouquet" yang berarti rangkaian bunga.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/lumbon.jpg" alt="buktean" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Banyumas</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Lumbon
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Motif daun talas atau godhong lumbu khas Banyumas; pola yang mengikuti alur bentuk daun. Masyarakat yang mampu menyesuaikan diri, adaptif, menjaga keseimbangan meskipun berada dalam situasi yang berubah. Simbol keakraban tanpa membedakan status.</p>
+                </div>
+              </div>
+            </article>
+            <article class="relative isolate flex flex-col gap-8 lg:flex-row">
+              <div class="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
+                <img src="images/motif/simbut.jpg" alt="buktean" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800" />
+                <div class="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4 text-xs">
+                  <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">Banten</p>
+                </div>
+                <div class="group relative max-w-xl">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <p>
+                      <span class="absolute inset-0"></span>
+                      Motif Simbut
+                    </p>
+                  </h3>
+                  <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">Bentuk menyerupai daun talas (“simbut”) dengan garis/grafis yang tebal. Motif sederhana namun khas suku Baduy dan daerah Banten. Kedekatan dengan alam, kesederhanaan hidup, kejujuran dan integritas. Pemakai motif ini diharapkan tetap rendah hati dan selaras dengan alam.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <div class="space-y-8">
+        <img src="images/favicon_light.png" alt="logo" class="h-9 w-auto dark:hidden" />
+        <img src="images/favicon_dark.png" alt="logo" class="h-9 w-auto not-dark:hidden" />
+        <p class="text-sm/6 text-balance text-gray-600 dark:text-gray-400">Membuat dunia lebih baik dengan merangkai hierarki yang elegan, sebagaimana sehelai batik ditenun dengan penuh makna.</p>
+        <div class="flex gap-x-6">
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">Facebook</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">Instagram</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">X</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">GitHub</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
+            <span class="sr-only">YouTube</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6">
+              <path d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Sitasi</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="https://www.unesco.org/en" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">UNESCO</a>
+              </li>
+              <li>
+                <a href="https://www.wikipedia.org/" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Wikipedia</a>
+              </li>
+              <li>
+                <a href="https://pusakaindonesia.id/" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Pusakaindonesia</a>
+              </li>
+              <li>
+                <a href="https://www.aa.com.tr/en" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Anadolu Anjasi</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-10 md:mt-0">
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Quick links</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="index.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Beranda</a>
+              </li>
+              <li>
+                <a href="explore.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Tentang batik</a>
+              </li>
+              <li>
+                <a href="sejarah.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Sejarah</a>
+              </li>
+              <li>
+                <a href="motif.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Motif</a>
+              </li>
+              <li>
+                <a href="galeri.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Galeri</a>
+              </li>
+              <li>
+                <a href="kontak.html" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Informasi kontak</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Motif Batik</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="motif.html#:~:text=Motif%20Kawung" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Kawung</a>
+              </li>
+              <li>
+                <a href="motif.html#:~:text=Motif%20Sidoasih" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Sidoasih</a>
+              </li>
+              <li>
+                <a href="motif.html#:~:text=Motif%20Cuwiri" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Cuwiri</a>
+              </li>
+              <li>
+                <a href="motif.html#:~:text=Motif%20Truntum" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Truntum</a>
+              </li>
+              <li>
+                <a href="motif.html#:~:text=Motif%20Gentongan" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Gentongan</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-10 md:mt-0">
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Galeri produk</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="galeri.html#:~:text=Batik%20mega%20mendung" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Batik mega mendung</a>
+              </li>
+              <li>
+                <a href="galeri.html#:~:text=Kain%20hias%20atau%20taplak%20meja" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Kain hias atau taplak meja</a>
+              </li>
+              <li>
+                <a href="galeri.html#:~:text=Syal%20scarf%20selendang%20hitam%20putih" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">Syal scarf selendang hitam putih</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 dark:border-white/10">
+      <p class="text-sm/6 text-gray-600 dark:text-gray-400">&copy; 2025 Jibreel Benjamin. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+<button onclick="topFunction()" class="hidden fixed bottom-7 right-9 z-[99] border-none outline-none bg-amber-500 text-white cursor-pointer p-3 rounded-full text-lg hover:bg-amber-600" id="myBtn" title="Go to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+</body>
+<script>
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</html>
